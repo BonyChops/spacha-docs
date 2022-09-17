@@ -1,0 +1,103 @@
+---
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Node.jsではじめる
+サーバーサイドでもSpachaを呼び出すことができます．
+
+:::caution
+
+Node.jsから呼び出す場合，`SpachaImage`(Canvas)のみ対応しています．HTML版の`Spacha`を用いる場合は[HTML](./html)，または[React](./react)から呼び出してください．
+
+:::
+
+## クイックスタート
+1. Node.js，npmが動作する環境を用意します．
+    <Tabs>
+    <TabItem value="windows" label="Windows">
+    
+    [nodejs.org](https://nodejs.org/en/)からインストーラをダウンロードします．
+
+    </TabItem>
+    <TabItem value="mac" label="Mac">
+    
+    次の語句で検索します．
+    ```
+    mac nodejs インストール
+    ```
+    
+    </TabItem>
+    <TabItem value="linux" label="Linux">
+    
+    次の語句で検索します．
+    ```
+    [distro名] nodejs インストール 
+    ```
+    
+    </TabItem>
+    </Tabs>
+
+    :::note
+
+    npmなしで動作するスタンドアロン版も検討中です！
+
+    :::
+
+1. `sample-spc-node`ディレクトリを用意します．
+    ```
+    mkdir -p sample-spc-node
+    cd sample-spc-node
+    ```
+
+1. `package.json`を準備します
+    ```
+    npm init --yes
+    ```
+
+1. Spachaと必要なパッケージをインストールします．
+    ```
+    npm i spacha canvas
+    ```
+
+1. `index.js`を作成します
+    ```js title="index.js"
+    const Canvas = require("canvas");
+    const Image = Canvas.Image;
+    const { SpachaImage } = require("spacha");
+    const fs = require("fs");
+
+    (async () => {
+        const canvas = new Canvas.Canvas(600, 300);
+        const ctx = canvas.getContext("2d");
+        const iconImg = new Image;
+        iconImg.src = "https://github.com/bonychops.png";
+        await new Promise((resolve) => { iconImg.onload = resolve });
+        new SpachaImage(ctx, {
+            user: {
+                name: "Bony_Chops",
+                img: iconImg
+            },
+            price: -31117,
+            theme: "red"
+        });
+
+        saveImg(canvas);
+    })();
+
+    const saveImg = (canvas) => {
+        const b64 = canvas.toDataURL().split(",")[1];
+        const buf = Buffer.from(b64, 'base64');
+        fs.writeFileSync("spc.png", buf);
+    }
+    ```
+
+1. 実行すると，`spc.png`が作成されます．
+    ```
+    node index
+    ```
+
+### 実装サンプル
+実装サンプルは[こちら](../samples)

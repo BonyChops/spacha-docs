@@ -1,0 +1,113 @@
+---
+sidebar_position: 4
+---
+
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+# CLI(コマンドライン)ではじめる
+
+CLIでSpachaを使いましょう．
+
+:::note
+
+Node.jsから呼び出す`SpachaImage`(Canvas)を用いてレンダリングしています．
+
+:::
+
+## インストール
+
+1. Node.js，npmが動作する環境を用意します．
+    <Tabs>
+    <TabItem value="windows" label="Windows">
+    
+    [nodejs.org](https://nodejs.org/en/)からインストーラをダウンロードします．
+
+    </TabItem>
+    <TabItem value="mac" label="Mac">
+    
+    次の語句で検索します．
+    ```
+    mac nodejs インストール
+    ```
+    
+    </TabItem>
+    <TabItem value="linux" label="Linux">
+    
+    次の語句で検索します．
+    ```
+    [distro名] nodejs インストール 
+    ```
+    
+    </TabItem>
+    </Tabs>
+
+    :::note
+
+    npmなしで動作するスタンドアロン版も検討中です！
+
+    :::
+
+1. `npm i -g spacha-cli` を実行します．
+    :::tip
+
+    Linuxの場合，su権限が必要になることがあります
+    ```
+    sudo npm i -g spacha-cli
+    ```
+
+    :::
+
+## 使ってみる
+
+### 200円で最高 {#240-nice}
+240円で「最高！」とスーパーチャットを投げてみましょう．
+
+```
+spacha --message "最高！" --price 240 spacha.png
+```
+
+![Example banner](/img/spc/240-great.png)
+
+### テーマを変更する
+500円で赤スパを投げてみましょう．お得ですね．
+```
+spacha --message "おめでとうございます！！" --price 500 --theme "red" spacha.png
+```
+
+![Example banner](/img/spc/red.png)
+
+### ユーザーを設定する {#set-user}
+投稿ユーザーを設定することができます．画像はファイルパス，またはURLを指定することができます．
+
+```
+spacha \
+    --message "チャンネル登録してください" \
+    --user.name "Bony_Chops" \
+    --user.image "https://github.com/bonychops.png" \
+    spacha.png
+```
+![Example banner](/img/spc/bonychops.png)
+
+### コメントなし {#without-comment}
+コメントなしのスパチャも投げることができます．
+```
+spacha \
+    --user.name "Bony_Chops" \
+    --user.image "https://github.com/bonychops.png" \
+    --price -31117 \
+    --theme "red" \
+    spacha.png
+```
+
+![Example banner](/img/spc/balance.png)
+
+<details>
+<summary>金額はBony_Chopsの2022/09/17現在の残高です</summary>
+
+Sponsorはこちらから
+- [GitHub Sponsor](https://github.com/sponsors/BonyChops)
+- [Amazon 欲しい物リスト](hhttps://www.amazon.co.jp/hz/wishlist/ls/8FLZNBFCT3ZK?ref_=wl_share)
+
+</details>

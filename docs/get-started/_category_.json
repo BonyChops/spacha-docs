@@ -1,0 +1,9 @@
+{
+  "label": "Get Started",
+
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "好きな環境ではじめよう．"
+  }
+}

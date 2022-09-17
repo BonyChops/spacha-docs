@@ -1,0 +1,251 @@
+---
+sidebar_position: 1
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# HTMLではじめる
+HTMLからSpachaを呼び出すことができます．
+
+## 準備
+1. `sample-spc`ディレクトリを作成します．
+    ```
+    mkdir -p sample-spc
+    ```
+1. `spacha.min.js`をダウンロードし，`js/`ディレクトリに置きます．
+1. `index.html`を用意します．
+    ```html title="index.html"
+    <!DOCTYPE html>
+    <html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spacha Sample</title>
+    </head>
+    <body>
+        
+    </body>
+    </html>
+    ```
+1. ディレクトリ構造がこのようになっているかを確認します．
+    ```
+    sample-spc
+    ├── index.html
+    └── js
+        └── spacha.min.js
+
+    1 directory, 2 files
+    ```
+
+## Spachaをセットアップ
+
+
+<Tabs groupId="view-types">
+  <TabItem value="html" label="HTML" default>
+
+本セクションでは，HTMLで構成された次のようなスーパーチャットを作成します(画像としてのエクスポートはできません)．
+
+1. `div`タグを追加します
+
+    ```html title="index.html" {3}
+    ...
+    <body>
+        <div id="spc-div"></div>
+    </body>
+    ...
+    ```
+
+1. `spacha.min.js`を読み込みます．
+    ```html title="index.html" {4}
+    ...
+    <body>
+        <div id="spc-div"></div>
+        <script src="js/spacha.min.js"></script>
+    </body>
+    ...
+    ```
+1. `spc-div`をSpachaに読み込ませます．
+    ```html title="index.html" {5-8}
+    ...
+    <body>
+        <div id="spc-div"></div>
+        <script src="js/spacha.min.js"></script>
+        <script>
+            var spc = document.getElementById("spc-div");
+            new Spacha(spc);
+        </script>
+    </body>
+    ...
+    ```
+1. HTMLをブラウザで開くと，スーパーチャットが生成されていることがわかります(リロードすると価格が変わります)．
+![Example banner](/img/html/html-first.png)
+
+1. 細かいオプションを指定することができます  
+    指定可能なオプションはこちらをご覧ください．
+
+    ```html title="index.html" {7-13}
+    ...
+    <body>
+        <div id="spc-div"></div>
+        <script src="js/spacha.min.js"></script>
+        <script>
+            var spc = document.getElementById("spc-div");
+            new Spacha(spc, {
+                message: "Hello, Spacha!",
+                price: 2000,
+                user: {
+                    name: "Spacha User"
+                }
+            });
+        </script>
+    </body>
+    ...
+    ```
+    ![Example banner](/img/html/html-option.png)
+
+<details>
+<summary>
+
+`index.html`の全体はこのようになっています．
+</summary>
+
+```html title="index.html"
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spacha Sample</title>
+</head>
+
+<body>
+    <div id="spc-div"></div>
+    <script src="js/spacha.min.js"></script>
+    <script>
+        var spc = document.getElementById("spc-div");
+        new Spacha(spc, {
+            message: "Hello, Spacha!",
+            price: 2000,
+            user: {
+                name: "Spacha User"
+            }
+        });
+    </script>
+</body>
+
+</html>
+```
+</details>
+
+</TabItem>
+<TabItem value="canvas" label="Canvas">
+本セクションでは，Canvasで構成された次のようなスーパーチャットを作成します．
+
+![Example banner](/img/html/canvas-result.png)
+1. Canvasタグを追加します
+
+    ```html title="index.html" {3}
+    ...
+    <body>
+        <canvas width="400" id="canvas"></canvas>
+    </body>
+    ...
+    ```
+
+1. `spacha.min.js`を読み込みます．
+    ```html title="index.html" {4}
+    ...
+    <body>
+        <canvas width="400" id="canvas"></canvas>
+        <script src="js/spacha.min.js"></script>
+    </body>
+    ...
+    ```
+1. `Canvas`をSpachaImageに読み込ませます．
+    ```html title="index.html" {5-9}
+    ...
+    <body>
+        <canvas width="400" id="canvas"></canvas>
+        <script src="js/spacha.min.js"></script>
+        <script>
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            new SpachaImage(ctx);
+        </script>
+    </body>
+    ...
+    ```
+1. HTMLをブラウザで開くと，スーパーチャットが生成されていることがわかります(リロードすると価格が変わります)．
+![Example banner](/img/html/canvas-first.png)
+
+1. 細かいオプションを指定することができます  
+    指定可能なオプションはこちらをご覧ください．
+
+    ```html title="index.html" {8-14}
+    ...
+    <body>
+        <canvas width="400" id="canvas"></canvas>
+        <script src="js/spacha.min.js"></script>
+        <script>
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            new SpachaImage(ctx, {
+                message: "Hello, Spacha!",
+                price: 2000,
+                user: {
+                    name: "Spacha User"
+                }
+            });
+        </script>
+    </body>
+    ...
+    ```
+    ![Example banner](/img/html/canvas-option.png)
+
+<details>
+<summary>
+
+`index.html`の全体はこのようになっています．
+</summary>
+
+```html title="index.html"
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spacha Sample</title>
+</head>
+
+<body>
+    <canvas width="400" id="canvas"></canvas>
+    <script src="js/spacha.min.js"></script>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        new SpachaImage(ctx, {
+            message: "Hello, Spacha!",
+            price: 2000,
+            user: {
+                name: "Spacha User"
+            }
+        });
+    </script>
+</body>
+
+</html>
+```
+
+</details>
+
+</TabItem>
+</Tabs>
+
+## 実装サンプル
+実装サンプルは[こちら](../samples)をご覧ください．
