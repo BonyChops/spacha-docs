@@ -4,6 +4,9 @@ sidebar_position: 3
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import {SpachaImage} from "react-spacha";
+const icon = <img src="https://github.com/bonychops.png" />
+const loaded = icon.loaded;
 
 # Node.jsではじめる
 サーバーサイドでもSpachaを呼び出すことができます．
@@ -18,25 +21,25 @@ Node.jsから呼び出す場合，`SpachaImage`(Canvas)のみ対応していま�
 1. Node.js，npmが動作する環境を用意します．
     <Tabs>
     <TabItem value="windows" label="Windows">
-    
+
     [nodejs.org](https://nodejs.org/en/)からインストーラをダウンロードします．
 
     </TabItem>
     <TabItem value="mac" label="Mac">
-    
+
     次の語句で検索します．
     ```
     mac nodejs インストール
     ```
-    
+
     </TabItem>
     <TabItem value="linux" label="Linux">
-    
+
     次の語句で検索します．
     ```
-    [distro名] nodejs インストール 
+    [distro名] nodejs インストール
     ```
-    
+
     </TabItem>
     </Tabs>
 
@@ -98,6 +101,17 @@ Node.jsから呼び出す場合，`SpachaImage`(Canvas)のみ対応していま�
     ```
     node index
     ```
+
+    ![Example banner](/img/spc/balance.png)
+
+    <details>
+    <summary>金額はBony_Chopsの2022/09/17現在の残高です</summary>
+
+    Sponsorはこちらから
+    - [GitHub Sponsor](https://github.com/sponsors/BonyChops)
+    - [Amazon 欲しい物リスト](hhttps://www.amazon.co.jp/hz/wishlist/ls/8FLZNBFCT3ZK?ref_=wl_share)
+
+    </details>
 
 ### 実装サンプル
 実装サンプルは[こちら](../samples)

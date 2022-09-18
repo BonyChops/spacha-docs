@@ -2,5 +2,5 @@
 sidebar_position: 0
 ---
 
-# 今すぐ試す
-[spacha.b7s.dev](/ja/)(このページ)でインストールなしで試すことができます！
+# Try now
+See [spacha.b7s.dev](/)(this page) to try Spacha without installision!

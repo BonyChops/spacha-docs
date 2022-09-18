@@ -257,5 +257,32 @@
   "tag-line": {
     "message": "YouTubeのスーパーチャット風ジェネレータ",
     "description": "Tag line of this site"
+  },
+  "Start Developing!": {
+    "message": "開発を始めよう！"
+  },
+  "Message": {
+    "message": "メッセージ"
+  },
+  "Price": {
+    "message": "値段"
+  },
+  "User Name": {
+    "message": "ユーザー名"
+  },
+  "Image URL": {
+    "message": "イメージURL"
+  },
+  "Theme": {
+    "message": "テーマ"
+  },
+  "Square Image": {
+    "message": "画像を四角にする"
+  },
+  "Image View(Canvas)": {
+    "message": "画像ビュー(Canvas)"
+  },
+  "Download as Image": {
+    "message": "画像としてダウンロード"
   }
 }

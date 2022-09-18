@@ -4,6 +4,7 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import {Spacha, SpachaImage} from "react-spacha";
 
 # HTMLではじめる
 HTMLからSpachaを呼び出すことができます．
@@ -25,7 +26,7 @@ HTMLからSpachaを呼び出すことができます．
         <title>Spacha Sample</title>
     </head>
     <body>
-        
+
     </body>
     </html>
     ```
@@ -46,6 +47,13 @@ HTMLからSpachaを呼び出すことができます．
   <TabItem value="html" label="HTML" default>
 
 本セクションでは，HTMLで構成された次のようなスーパーチャットを作成します(画像としてのエクスポートはできません)．
+
+<div style={{width: "400px"}}>
+    <Spacha
+        price={2000}
+        message="Hello, Spacha!"
+    />
+</div>
 
 1. `div`タグを追加します
 
@@ -82,7 +90,7 @@ HTMLからSpachaを呼び出すことができます．
 1. HTMLをブラウザで開くと，スーパーチャットが生成されていることがわかります(リロードすると価格が変わります)．
 ![Example banner](/img/html/html-first.png)
 
-1. 細かいオプションを指定することができます  
+1. 細かいオプションを指定することができます
     指定可能なオプションはこちらをご覧ください．
 
     ```html title="index.html" {7-13}
@@ -182,7 +190,7 @@ HTMLからSpachaを呼び出すことができます．
 1. HTMLをブラウザで開くと，スーパーチャットが生成されていることがわかります(リロードすると価格が変わります)．
 ![Example banner](/img/html/canvas-first.png)
 
-1. 細かいオプションを指定することができます  
+1. 細かいオプションを指定することができます
     指定可能なオプションはこちらをご覧ください．
 
     ```html title="index.html" {8-14}

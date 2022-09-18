@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 ![Example banner](/img/html/html-profile.png)
 
 
-```html title="index.html"
+```html title="index.html" {19-26}
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -58,7 +58,7 @@ import TabItem from '@theme/TabItem';
 ![Example banner](/img/html/canvas-profile.png)
 
 
-```html title="index.html"
+```html title="index.html" {20-27}
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -93,14 +93,14 @@ import TabItem from '@theme/TabItem';
 </html>
 ```
 
-  
+
   </TabItem>
   <TabItem value="nodejs" label="Node.js">
 
 ![Example banner](/img/samples/icon.png)
 
 
-```javascript title="index.js"
+```javascript title="index.js" {12-18}
 const Canvas = require("canvas");
 const Image = Canvas.Image;
 const { SpachaImage } = require("spacha");
@@ -203,13 +203,13 @@ HTMLは非対応です．
 
 :::caution アイコンに外部URLを設定した状態で画像をエクスポートする
 
-アイコンを外部のURLに設定した状態でエクスポートを行うと，`SecurityError: The operation is insecure`としてブロックされることがあります．これはCORSによる保護のためです．詳細は[こちら](https://developer.mozilla.org/ja/docs/Web/HTML/CORS_enabled_image)を確認してください．  
+アイコンを外部のURLに設定した状態でエクスポートを行うと，`SecurityError: The operation is insecure`としてブロックされることがあります．これはCORSによる保護のためです．詳細は[こちら](https://developer.mozilla.org/ja/docs/Web/HTML/CORS_enabled_image)を確認してください．
 対策として，次のような対処が考えられます．
 - 自分が操作するサーバーであれば，サーバーサイドにもCORSヘッダを設定する
 - 外部のリソースであれば，自分が操作するサーバーからホストするよう試用を変更する
 
 :::
-  
+
 ![Example banner](/img/html/canvas-save.png)
 
   </TabItem>

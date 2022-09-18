@@ -257,5 +257,32 @@
   "tag-line": {
     "message": "YouTube superchat like image generator",
     "description": "Tag line of this site"
+  },
+  "Start Developing!": {
+    "message": "Start Developing!"
+  },
+  "Message": {
+    "message": "Message"
+  },
+  "Price": {
+    "message": "Price"
+  },
+  "User Name": {
+    "message": "User Name"
+  },
+  "Image URL": {
+    "message": "Image URL"
+  },
+  "Theme": {
+    "message": "Theme"
+  },
+  "Square Image": {
+    "message": "Square Image"
+  },
+  "Image View(Canvas)": {
+    "message": "Image View(Canvas)"
+  },
+  "Download as Image": {
+    "message": "Download as Image"
   }
 }

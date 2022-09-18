@@ -1,0 +1,75 @@
+---
+sidebar_position: 2
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import { Spacha, SpachaImage } from "react-spacha";
+const icon = <img src="https://github.com/bonychops.png" />;
+
+# React ではじめる
+
+React から Spacha を呼び出すことができます．
+
+## インストール
+
+npm から react-spacha をインストールします．
+
+```
+npm i react-spacha
+```
+
+
+## 呼び出す
+
+<Tabs groupId="cview-types">
+<TabItem value="html" label="HTML" default>
+
+<div style={{width: "600px", marginBottom: "10px"}}>
+    <Spacha
+        price={200}
+        message="Hello Spacha from React!"
+    />
+</div>
+
+```jsx
+import { Spacha } from "react-spacha";
+
+<Spacha price={200} message="Hello Spacha from React!" />;
+```
+
+:::tip
+`Spacha`コンポーネント(HTML 版)には`width`や`height`を指定する機能がありません．Spacha の幅が大きすぎる場合は，div タグで`width`を固定すると良いかもしれません．
+
+```jsx {3,8}
+import { Spacha } from "react-spacha";
+
+<div style={{width: "600px"}}>
+    {icon.conplete ? <Spacha
+        price={200}
+        message="Hello Spacha from React!"
+    /> : <div>}
+</div>
+```
+
+:::
+
+</TabItem>
+<TabItem value="canvas" label="Canvas" default>
+
+<div>
+  <SpachaImage price={200} message="Hello Spacha from React!" />
+</div>
+
+```jsx
+import { Spacha } from "react-spacha";
+
+<SpachaImage price={200} message="Hello Spacha from React!" />;
+```
+
+</TabItem>
+</Tabs>
+
+## 実装例
+
+実装サンプルは[こちら](../samples)
